@@ -66,6 +66,13 @@ model_checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
   save_weights_only = True
 )
 
+early_stopping_callback = tf.keras.callbacks.EarlyStopping(
+  monitor = "loss",
+  mode="min",
+  patience = 2,
+  min_delta = 0.001
+)
+
 transformer_model.fit(
   x,
   y,
@@ -73,6 +80,7 @@ transformer_model.fit(
   batch_size = 32,
   callbacks=[
     model_checkpoint_callback,
-    tensorboard_callback
+    tensorboard_callback,
+    early_stopping_callback
   ]
 )
