@@ -22,7 +22,6 @@ $ python --version
 ```
 
 
-
 Train
 
 ```
@@ -106,7 +105,10 @@ transformer_model.fit(
   ]
 )
 ```
+
+
 Output
+
 ```
 Dataset loaded. Length: 185583 lines
 Train data loaded. Length: 100000 lines
@@ -164,7 +166,9 @@ Epoch 00010: saving model to ./logs/transformer_ep-10_loss-0.39_acc-0.92.ckpt
 32/32 [==============================] - 2s 69ms/step - loss: 0.3942 - accuracy: 0.9169
 ```
 
+
 Predict
+
 ```
 import tensorflow as tf
 import numpy as np
@@ -218,6 +222,7 @@ translate("c'est une bonne chose .")
 translate("il faut faire à manger pour nourrir les gens .")
 translate("tom a acheté un nouveau vélo .")
 ```
+
 ```
 Original: c'est une belle journée .
 Traduction: it' s a beautiful day .
@@ -238,7 +243,9 @@ Visualize
 $ ./tensorboard --logdir=./logs
 ```
 
+
 Configs
+
 ```
 Base:
   EMBEDDING_SIZE = 64,
