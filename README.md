@@ -6,7 +6,7 @@ $ cat requirements.txt && pip install -r requirements.txt
 
 ```
 tensorflow==2.3.0
-nump==1.18.5
+numpy==1.18.5
 nltk==3.5
 ```
 

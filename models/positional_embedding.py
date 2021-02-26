@@ -14,7 +14,7 @@ class PositionalEmbedding(tf.keras.layers.Layer):
     pos_input = tf.keras.backend.cast(pos_input, tf.float32)
     evens = tf.keras.backend.arange(0, output_dim // 2) * 2
     odds = tf.keras.backend.arange(0, output_dim // 2) * 2 + 1
-    even_embd = tf.sin(
+    even_embedding = tf.sin(
       tf.keras.backend.dot(
         tf.expand_dims(pos_input, -1),
         tf.expand_dims(1.0 / tf.pow(
@@ -23,7 +23,7 @@ class PositionalEmbedding(tf.keras.layers.Layer):
           ), 0)
         )
       )
-    odd_embd = tf.cos(
+    odd_embedding = tf.cos(
       tf.keras.backend.dot(
         tf.expand_dims(pos_input, -1),
         tf.expand_dims(1.0 / tf.pow(
@@ -32,8 +32,8 @@ class PositionalEmbedding(tf.keras.layers.Layer):
           ), 0)
         )
       )
-    embd = tf.stack([even_embd, odd_embd], axis = -1)
-    output = tf.reshape(embd, [-1, tf.shape(x)[1], output_dim])
+    embedding = tf.stack([even_embedding, odd_embedding], axis = -1)
+    output = tf.reshape(embedding, [-1, tf.shape(x)[1], output_dim])
     output += x
 
     return output
