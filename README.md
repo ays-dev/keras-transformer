@@ -400,3 +400,24 @@ Big:
   DATASET_SIZE = 200000
   BATCH_SIZE = 32
 ```
+
+Credits
+
+<pre>
+<b>Coder un Transformer avec Tensorflow et Keras (LIVE)</b>
+<a href="https://www.youtube.com/watch?v=mWA-PmxMBDk">https://www.youtube.com/watch?v=mWA-PmxMBDk</a>
+<i>Thibault Neveu</i>
+<a href="https://colab.research.google.com/drive/1akAsUAddF2-x57BJBA_gF-v4htyiR12y?usp=sharing">https://colab.research.google.com/drive/1akAsUAddF2-x57BJBA_gF-v4htyiR12y?usp=sharing</a>
+</pre>
+
+<pre>
+<b>[TUTORIAL + CÓDIGO] Machine Translation usando redes TRANSFORMER (Python + Keras)</b>
+<a href="https://www.youtube.com/watch?v=p2sTJYoIwj0">https://www.youtube.com/watch?v=p2sTJYoIwj0</a>
+<i>codificandobits</i>
+<a href="https://github.com/codificandobits/Traductor_con_redes_Transformer/blob/master/machine-translation-transformers.ipynb">https://github.com/codificandobits/Traductor_con_redes_Transformer/blob/master/machine-translation-transformers.ipynb</a>
+</pre>
+
+<pre>
+<a href="https://github.com/CyberZHG/keras-transformer">https://github.com/CyberZHG/keras-transformer</a>
+<i>CyberZHG</i>
+</pre>
