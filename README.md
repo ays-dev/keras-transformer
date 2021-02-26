@@ -127,9 +127,9 @@ Encoder-Input (InputLayer)      [(None, None)]       0
 __________________________________________________________________________________________________
 Decoder-Input (InputLayer)      [(None, None)]       0
 __________________________________________________________________________________________________
-Encoder-Token-Embedding (Embedd (None, None, 64)     1110016     Encoder-Input[0][0]
+Encoder-Word-Embedding (WordEmb (None, None, 64)     1110016     Encoder-Input[0][0]
 __________________________________________________________________________________________________
-Decoder-Token-Embedding (Embedd (None, None, 64)     579456      Decoder-Input[0][0]
+Decoder-Word-Embedding (WordEmb (None, None, 64)     579456      Decoder-Input[0][0]
 __________________________________________________________________________________________________
 Encoder-Position-Embedding (Pos (None, None, 64)     0           Encoder-Word-Embedding[0][0]
 __________________________________________________________________________________________________
