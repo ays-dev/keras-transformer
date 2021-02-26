@@ -1,4 +1,4 @@
-Requirements
+### Requirements
 
 ```
 $ cat requirements.txt && pip install -r requirements.txt
@@ -22,7 +22,7 @@ $ python --version
 ```
 
 
-Train
+### Train
 
 ```python
 import tensorflow as tf
@@ -114,7 +114,7 @@ transformer_model.fit(
 ```
 
 
-Output
+##### Output
 
 ```
 Dataset loaded. Length: 185583 lines
@@ -169,7 +169,7 @@ Epoch 00010: saving model to ./logs/transformer_ep-10_loss-0.14_acc-0.96.ckpt
 ```
 
 
-Predict
+### Predict
 
 ```python
 import tensorflow as tf
@@ -224,6 +224,9 @@ translate("il faut faire à manger pour nourrir les gens .")
 translate("tom a acheté un nouveau vélo .")
 ```
 
+
+##### Output
+
 ```
 Original: c'est une belle journée .
 Traduction: it' s a beautiful day .
@@ -238,7 +241,7 @@ Traduction: tom bought a new bicycle .
 ```
 
 
-Fine-tuning
+### Fine-tuning
 
 ```python
 import tensorflow as tf
@@ -340,6 +343,9 @@ for batch_num in BATCH_SIZE.domain.values:
           session_num += 1
 ```
 
+
+##### Output
+
 ```
 --- Starting trial: run-0
 {'batch_num': 16, 'dense_num': 256, 'head_num': 4, 'embed_num': 256, 'layer_num': 4}
@@ -364,14 +370,14 @@ for batch_num in BATCH_SIZE.domain.values:
 2/2 [==============================] - 0s 162ms/step - loss: 14.0015 - accuracy: 0.0500
 ```
 
-Visualize
+### Visualize
 
 ```
 $ ./tensorboard --logdir=./logs
 ```
 
 
-Configs
+### Configs
 
 ```
 Base (training on CPU) :
@@ -401,7 +407,7 @@ Big (training on GPU) :
  -> 60 millions params (model size : ~600 Mo)
 ```
 
-Credits
+### Credits
 
 <pre>
 <b>Coder un Transformer avec Tensorflow et Keras (LIVE)</b>
@@ -427,7 +433,7 @@ Credits
 <a href="https://www.manythings.org/anki/">https://www.manythings.org/anki/</a>
 </pre>
 
-Ressources
+### Ressources
 
 <https://arxiv.org/abs/1706.03762> Attention Is All You Need (official paper)
 
