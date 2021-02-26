@@ -23,6 +23,7 @@ $ python --version
 
 
 ### Train
+``python train.py``
 
 ```python
 import tensorflow as tf
@@ -170,6 +171,7 @@ Epoch 00010: saving model to ./logs/transformer_ep-10_loss-0.14_acc-0.96.ckpt
 
 
 ### Predict
+``python predict.py``
 
 ```python
 import tensorflow as tf
@@ -242,6 +244,7 @@ Traduction: tom bought a new bicycle .
 
 
 ### Fine-tuning
+``python params.py``
 
 ```python
 import tensorflow as tf
