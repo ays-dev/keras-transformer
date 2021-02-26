@@ -36,7 +36,7 @@ HEAD_NUM = hp.HParam("head_num", hp.Discrete([8, 4]))
 EMBED_NUM = hp.HParam("embed_num", hp.Discrete([512, 256]))
 LAYER_NUM = hp.HParam("layer_num", hp.Discrete([6, 4]))
 
-with tf.summary.create_file_writer("logs/hparam_tuning").as_default(): # ./tensorboard --logdir logs/
+with tf.summary.create_file_writer("logs/hparam_tuning").as_default():
   hp.hparams_config(
     hparams=[LAYER_NUM, HEAD_NUM, EMBED_NUM, DENSE_NUM, BATCH_SIZE],
     metrics=[
@@ -67,12 +67,6 @@ def train_test_model(hparams):
 
   return accuracy
 
-
-################################################
-#                                              #
-#                   HParams.                   #
-#                                              #
-################################################
 def run(run_dir, hparams):
   with tf.summary.create_file_writer(run_dir).as_default():
     hp.hparams(hparams)
