@@ -429,6 +429,7 @@ Credits
 
 Ressources
 
+<https://arxiv.org/abs/1706.03762> Attention Is All You Need (Official paper)
 
 <https://github.com/Kyubyong/transformer/blob/fb023bb097e08d53baf25b46a9da490beba51a21/tf1.2_legacy/train.py>
 
