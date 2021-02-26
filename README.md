@@ -135,10 +135,9 @@ Encoder-Position-Embedding (Pos (None, None, 64)     0           Encoder-Word-Em
 __________________________________________________________________________________________________
 Decoder-Position-Embedding (Pos (None, None, 64)     0           Decoder-Word-Embedding[0][0]
 __________________________________________________________________________________________________
-Encoder (Encoder)               (None, None, 64)     66688       Encoder-Pos-Embedding[0][0]
+Encoder (Encoder)               (None, None, 64)     66688       Encoder-Position-Embedding[0][0]
 __________________________________________________________________________________________________
-Decoder (Decoder)               (None, None, 64)     66688       Decoder-Pos-Embedding[0][0]
-                                                                 Encoder[0][0]
+Decoder (Decoder)               (None, None, 64)     66688       Decoder-Position-Embedding[0][0]
 __________________________________________________________________________________________________
 Decoder-Output (Dense)          (None, None, 9054)   588510      Decoder[0][0]
 ==================================================================================================
