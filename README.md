@@ -140,30 +140,26 @@ Trainable params: 2,411,358
 Non-trainable params: 0
 __________________________________________________________________________________________________
 Epoch 1/10
-3125/3125 [==============================] - ETA: 0s - loss: 1.0451 - accuracy: 0.8375
-Epoch 00001: saving model to ./logs/transformer_ep-01_loss-1.05_acc-0.84.ckpt
-3125/3125 [==============================] - 1177s 377ms/step - loss: 1.0451 - accuracy: 0.8375
+3125/3125 [==============================] - ETA: 0s - loss: 1.0576 - accuracy: 0.8354
+Epoch 00001: saving model to ./logs/transformer_ep-01_loss-1.06_acc-0.84.ckpt
+3125/3125 [==============================] - 888s 284ms/step - loss: 1.0576 - accuracy: 0.8354
 Epoch 2/10
-3125/3125 [==============================] - ETA: 0s - loss: 0.4695 - accuracy: 0.9119
-Epoch 00002: saving model to ./logs/transformer_ep-02_loss-0.47_acc-0.91.ckpt
-3125/3125 [==============================] - 1166s 373ms/step - loss: 0.4695 - accuracy: 0.9119
+3125/3125 [==============================] - ETA: 0s - loss: 0.4799 - accuracy: 0.9101
+Epoch 00002: saving model to ./logs/transformer_ep-02_loss-0.48_acc-0.91.ckpt
+3125/3125 [==============================] - 900s 288ms/step - loss: 0.4799 - accuracy: 0.9101
 Epoch 3/10
+3125/3125 [==============================] - ETA: 0s - loss: 0.3348 - accuracy: 0.9308
+Epoch 00003: saving model to ./logs/transformer_ep-03_loss-0.33_acc-0.93.ckpt
+3125/3125 [==============================] - 904s 289ms/step - loss: 0.3348 - accuracy: 0.9308
 ...
-31/32 [============================>.] - ETA: 0s - loss: 0.4831 - accuracy: 0.9023
-Epoch 00007: saving model to ./logs/transformer_ep-07_loss-0.48_acc-0.90.ckpt
-32/32 [==============================] - 2s 67ms/step - loss: 0.4830 - accuracy: 0.9023
-Epoch 8/10
-31/32 [============================>.] - ETA: 0s - loss: 0.4402 - accuracy: 0.9108
-Epoch 00008: saving model to ./logs/transformer_ep-08_loss-0.44_acc-0.91.ckpt
-32/32 [==============================] - 2s 59ms/step - loss: 0.4399 - accuracy: 0.9108
 Epoch 9/10
-31/32 [============================>.] - ETA: 0s - loss: 0.4137 - accuracy: 0.9146
-Epoch 00009: saving model to ./logs/transformer_ep-09_loss-0.41_acc-0.91.ckpt
-32/32 [==============================] - 2s 60ms/step - loss: 0.4137 - accuracy: 0.9144
+3125/3125 [==============================] - ETA: 0s - loss: 0.1527 - accuracy: 0.9603
+Epoch 00009: saving model to ./logs/transformer_ep-09_loss-0.15_acc-0.96.ckpt
+3125/3125 [==============================] - 878s 281ms/step - loss: 0.1527 - accuracy: 0.9603
 Epoch 10/10
-31/32 [============================>.] - ETA: 0s - loss: 0.3943 - accuracy: 0.9168
-Epoch 00010: saving model to ./logs/transformer_ep-10_loss-0.39_acc-0.92.ckpt
-32/32 [==============================] - 2s 69ms/step - loss: 0.3942 - accuracy: 0.9169
+3125/3125 [==============================] - ETA: 0s - loss: 0.1426 - accuracy: 0.9624
+Epoch 00010: saving model to ./logs/transformer_ep-10_loss-0.14_acc-0.96.ckpt
+3125/3125 [==============================] - 877s 281ms/step - loss: 0.1426 - accuracy: 0.9624
 ```
 
 
