@@ -21,8 +21,8 @@ def get_model(
   encoder_embedding = WordEmbedding(ENCODER_VOCAB_SIZE, EMBEDDING_SIZE, name = "Encoder-Word-Embedding")(encoder_layer_input)
   decoder_embedding = WordEmbedding(DECODER_VOCAB_SIZE, EMBEDDING_SIZE, name = "Decoder-Word-Embedding")(decoder_layer_input)
 
-  encoder_embedding = PositionalEmbedding(name = "Encoder-Position-Embedding")(encoder_embedding)
-  decoder_embedding = PositionalEmbedding(name = "Decoder-Position-Embedding")(decoder_embedding)
+  encoder_embedding = PositionalEmbedding(name = "Encoder-Positional-Embedding")(encoder_embedding)
+  decoder_embedding = PositionalEmbedding(name = "Decoder-Positional-Embedding")(decoder_embedding)
 
   encoder_output = Encoder(ENCODER_LAYERS, EMBEDDING_SIZE, DENSE_LAYER_SIZE, NUMBER_HEADS, name = "Encoder")(encoder_embedding)
   decoder_output = Decoder(DECODER_LAYERS, EMBEDDING_SIZE, DENSE_LAYER_SIZE, NUMBER_HEADS, name = "Decoder")((decoder_embedding, encoder_output))

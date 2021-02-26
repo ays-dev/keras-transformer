@@ -18,4 +18,5 @@ def make_translate(model, encoder_vocab, decoder_vocab, decoder_inverted_vocab, 
 
     print('Original: {}'.format(sentence))
     print('Traduction: {}'.format(' '.join(map(lambda x: decoder_inverted_vocab[x], prediction[0][1:-1]))))
+
   return translate
