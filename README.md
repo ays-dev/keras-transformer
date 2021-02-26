@@ -386,7 +386,7 @@ Base:
   MAX_WINDOW_SIZE = 20
   DATASET_SIZE = 100000
   BATCH_SIZE = 32
-
+ -> 2.4 millions params (model size : ~28 Mo)
 
 Big:
   EMBEDDING_SIZE = 512,
@@ -399,6 +399,7 @@ Big:
   MAX_WINDOW_SIZE = 65
   DATASET_SIZE = 200000
   BATCH_SIZE = 32
+ -> 60 millions params (model size : ~600 Mo)
 ```
 
 Credits
