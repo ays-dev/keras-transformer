@@ -110,7 +110,7 @@ Output
 ```
 Dataset loaded. Length: 185583 lines
 Train data loaded. Length: 100000 lines
-Model: "functional_1"
+Model: "Transformer-Model"
 __________________________________________________________________________________________________
 Layer (type)                    Output Shape         Param #     Connected to
 ==================================================================================================
@@ -153,10 +153,12 @@ Predict
 ```
 import tensorflow as tf
 import numpy as np
+import os.path
 
 from dataset import get_dataset, prepare_dataset
 from model import get_model
 from utils.make_translate import make_translate
+
 
 dataset = get_dataset("fr-en")
 
@@ -189,20 +191,7 @@ transformer_model = get_model(
   DENSE_LAYER_SIZE = 128
 )
 
-transformer_model.compile(
-  optimizer = "adam",
-  loss = [
-    "sparse_categorical_crossentropy"
-  ],
-  metrics = [
-    "accuracy"
-  ]
-)
-
 transformer_model.summary()
-
-x = [np.array(encoder_input), np.array(decoder_input)]
-y = np.array(decoder_output)
 
 transformer_model.load_weights('./logs/transformer_ep-10_loss-0.14_acc-0.96.ckpt')
 
@@ -213,18 +202,6 @@ translate("j'aime manger du gâteau .")
 translate("c'est une bonne chose .")
 translate("il faut faire à manger pour nourrir les gens .")
 translate("tom a acheté un nouveau vélo .")
-```
-```
-Original: c'est une belle journée .
-Traduction: it' s a beautiful day .
-Original: j'aime manger du gâteau .
-Traduction: i like to eat some cake .
-Original: c'est une bonne chose .
-Traduction: that' s a good thing .
-Original: il faut faire à manger pour nourrir les gens .
-Traduction: we have to feed the people .
-Original: tom a acheté un nouveau vélo .
-Traduction: tom bought a new bicycle .
 ```
 
 Visualize
@@ -245,7 +222,7 @@ Base:
   DENSE_LAYER_SIZE = 128
   MAX_WINDOW_SIZE = 20
   DATASET_SIZE = 100000
-  BATCH_SIZE = 16
+  BATCH_SIZE = 32
 
 
 Big:

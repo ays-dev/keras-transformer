@@ -38,20 +38,7 @@ transformer_model = get_model(
   DENSE_LAYER_SIZE = 128
 )
 
-transformer_model.compile(
-  optimizer = "adam",
-  loss = [
-    "sparse_categorical_crossentropy"
-  ],
-  metrics = [
-    "accuracy"
-  ]
-)
-
 transformer_model.summary()
-
-x = [np.array(encoder_input), np.array(decoder_input)]
-y = np.array(decoder_output)
 
 transformer_model.load_weights('./logs/transformer_ep-10_loss-0.14_acc-0.96.ckpt')
 
