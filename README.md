@@ -50,7 +50,6 @@ decoder_inverted_vocab) = prepare_dataset(
   train_dataset,
   shuffle = False,
   lowercase = True,
-  dump_dic = True,
   max_window_size = 20
 )
 
