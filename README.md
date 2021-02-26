@@ -24,7 +24,7 @@ $ python --version
 
 Train
 
-```
+```python
 import tensorflow as tf
 import numpy as np
 
@@ -165,7 +165,7 @@ Epoch 00010: saving model to ./logs/transformer_ep-10_loss-0.14_acc-0.96.ckpt
 
 Predict
 
-```
+```python
 import tensorflow as tf
 import numpy as np
 import os.path
