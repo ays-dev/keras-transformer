@@ -131,9 +131,9 @@ Encoder-Token-Embedding (Embedd (None, None, 64)     1110016     Encoder-Input[0
 __________________________________________________________________________________________________
 Decoder-Token-Embedding (Embedd (None, None, 64)     579456      Decoder-Input[0][0]
 __________________________________________________________________________________________________
-Encoder-Pos-Embedding (PosEmbed (None, None, 64)     0           Encoder-Token-Embedding[0][0]
+Encoder-Position-Embedding (Pos (None, None, 64)     0           Encoder-Word-Embedding[0][0]
 __________________________________________________________________________________________________
-Decoder-Pos-Embedding (PosEmbed (None, None, 64)     0           Decoder-Token-Embedding[0][0]
+Decoder-Position-Embedding (Pos (None, None, 64)     0           Decoder-Word-Embedding[0][0]
 __________________________________________________________________________________________________
 Encoder (Encoder)               (None, None, 64)     66688       Encoder-Pos-Embedding[0][0]
 __________________________________________________________________________________________________
