@@ -1,7 +1,7 @@
 Requirements
 
 ```
-$ cat requirements.txt
+$ cat requirements.txt && pip install -r requirements.txt
 ```
 
 ```
