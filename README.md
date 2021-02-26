@@ -427,3 +427,37 @@ Credits
 <a href="https://www.manythings.org/anki/">https://www.manythings.org/anki/</a>
 </pre>
 
+Ressources
+
+
+<https://github.com/Kyubyong/transformer/blob/fb023bb097e08d53baf25b46a9da490beba51a21/tf1.2_legacy/train.py>
+
+<https://github.com/Kyubyong/transformer/blob/master/model.py>
+
+<https://github.com/pemywei/attention-is-all-you-need-tensorflow/blob/master/Transformer/model/nmt.py>
+
+<https://github.com/tensorflow/models/blob/master/official/nlp/transformer/transformer.py>
+
+<https://towardsdatascience.com/attention-is-all-you-need-discovering-the-transformer-paper-73e5ff5e0634>
+
+<http://jalammar.github.io/illustrated-transformer/>
+
+<https://nlp.seas.harvard.edu/2018/04/03/attention.html>
+
+<http://statmt.org/wmt14/translation-task.html>
+
+<https://github.com/lucidrains/feedback-transformer-pytorch/blob/main/feedback_transformer_pytorch/feedback_transformer_pytorch.py>
+
+<https://huggingface.co/blog/encoder-decoder>
+
+<http://vandergoten.ai/2018-09-18-attention-is-all-you-need/> (softmax implementation)
+
+<https://www.prhlt.upv.es/aigaion2/attachments/Transformer.pdf-54651af972703d4b1443fc03a8a9e9a6.pdf>
+
+<https://github.com/lilianweng/transformer-tensorflow/blob/master/transformer.py>
+
+<https://towardsdatascience.com/transformer-neural-network-step-by-step-breakdown-of-the-beast-b3e096dc857f>
+
+<https://charon.me/posts/pytorch/pytorch_seq2seq_6/#training-the-seq2seq-model>
+
+<https://trungtran.io/2019/04/29/create-the-transformer-with-tensorflow-2-0/>
