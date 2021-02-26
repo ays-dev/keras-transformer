@@ -106,8 +106,8 @@ transformer_model.fit(
   epochs = 10,
   batch_size = 32,
   callbacks=[
-    model_checkpoint_callback,
     tensorboard_callback,
+    model_checkpoint_callback,
     early_stopping_callback
   ]
 )
