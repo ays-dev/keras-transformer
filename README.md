@@ -174,7 +174,6 @@ Predict
 ```python
 import tensorflow as tf
 import numpy as np
-import os.path
 
 from dataset import get_dataset, prepare_dataset
 from model import get_model
