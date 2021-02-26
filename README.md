@@ -146,7 +146,22 @@ Epoch 2/10
 Epoch 00002: saving model to ./logs/transformer_ep-02_loss-0.47_acc-0.91.ckpt
 3125/3125 [==============================] - 1166s 373ms/step - loss: 0.4695 - accuracy: 0.9119
 Epoch 3/10
-1575/3125 [==============>...............] - ETA: 9:13 - loss: 0.3335 - accuracy: 0.9310
+...
+31/32 [============================>.] - ETA: 0s - loss: 0.4831 - accuracy: 0.9023
+Epoch 00007: saving model to ./logs/transformer_ep-07_loss-0.48_acc-0.90.ckpt
+32/32 [==============================] - 2s 67ms/step - loss: 0.4830 - accuracy: 0.9023
+Epoch 8/10
+31/32 [============================>.] - ETA: 0s - loss: 0.4402 - accuracy: 0.9108
+Epoch 00008: saving model to ./logs/transformer_ep-08_loss-0.44_acc-0.91.ckpt
+32/32 [==============================] - 2s 59ms/step - loss: 0.4399 - accuracy: 0.9108
+Epoch 9/10
+31/32 [============================>.] - ETA: 0s - loss: 0.4137 - accuracy: 0.9146
+Epoch 00009: saving model to ./logs/transformer_ep-09_loss-0.41_acc-0.91.ckpt
+32/32 [==============================] - 2s 60ms/step - loss: 0.4137 - accuracy: 0.9144
+Epoch 10/10
+31/32 [============================>.] - ETA: 0s - loss: 0.3943 - accuracy: 0.9168
+Epoch 00010: saving model to ./logs/transformer_ep-10_loss-0.39_acc-0.92.ckpt
+32/32 [==============================] - 2s 69ms/step - loss: 0.3942 - accuracy: 0.9169
 ```
 
 Predict
@@ -203,6 +218,19 @@ translate("c'est une bonne chose .")
 translate("il faut faire à manger pour nourrir les gens .")
 translate("tom a acheté un nouveau vélo .")
 ```
+```
+Original: c'est une belle journée .
+Traduction: it' s a beautiful day .
+Original: j'aime manger du gâteau .
+Traduction: i like to eat some cake .
+Original: c'est une bonne chose .
+Traduction: that' s a good thing .
+Original: il faut faire à manger pour nourrir les gens .
+Traduction: we have to feed the people .
+Original: tom a acheté un nouveau vélo .
+Traduction: tom bought a new bicycle .
+```
+
 
 Visualize
 
