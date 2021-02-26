@@ -1,0 +1,8 @@
+embeddings {
+  tensor_name: "layer_with_weights-0/word_embedding/embeddings/.ATTRIBUTES/VARIABLE_VALUE"
+  metadata_path: "../dic-fr.txt"
+}
+embeddings {
+  tensor_name: "layer_with_weights-1/word_embedding/embeddings/.ATTRIBUTES/VARIABLE_VALUE"
+  metadata_path: "../dic-en.txt"
+}

@@ -2,7 +2,7 @@ import tensorflow as tf
 
 class MultiHeadAttention(tf.keras.layers.Layer):
   def __init__(self, embedding_size, nb_head, **kwargs):
-    super(**kwargs).__init__()
+    super().__init__(**kwargs)
 
     if not embedding_size % nb_head == 0:
       raise SystemError("Embedding_size should be divisible by number of heads")
@@ -10,6 +10,16 @@ class MultiHeadAttention(tf.keras.layers.Layer):
     self.embedding_size = embedding_size
     self.nb_head = nb_head
     self.head_dim = embedding_size // nb_head
+
+  def get_config(self):
+    config = super().get_config().copy()
+
+    config.update({
+      'embedding_size': self.embedding_size,
+      'nb_head': self.nb_head
+    })
+
+    return config
 
   def build(self, input_shape):
     super().build(input_shape)

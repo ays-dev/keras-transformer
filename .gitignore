@@ -1,0 +1,3 @@
+logs/transformer*
+logs/checkpoint
+logs/hparam_tuning

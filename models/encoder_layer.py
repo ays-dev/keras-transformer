@@ -4,11 +4,22 @@ from .multi_head_attention import MultiHeadAttention
 
 class EncoderLayer(tf.keras.layers.Layer):
   def __init__(self, embedding_size, dense_layer_size, nb_head, **kwargs):
-    super(**kwargs).__init__()
+    super().__init__(**kwargs)
 
     self.embedding_size = embedding_size
     self.dense_layer_size = dense_layer_size
     self.nb_head = nb_head
+
+  def get_config(self):
+    config = super().get_config().copy()
+
+    config.update({
+      'embedding_size': self.embedding_size,
+      'dense_layer_size': self.dense_layer_size,
+      'nb_head': self.nb_head
+    })
+
+    return config
 
   def build(self, input_shape):
     super().build(input_shape)

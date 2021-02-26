@@ -1,7 +1,7 @@
-from helpers.shuffle_list import shuffle_list
-from helpers.tokenize import tokenize
-from helpers.get_vocab import get_vocab
-from helpers.encode_with_vocab import encode_with_vocab
+from utils.shuffle_list import shuffle_list
+from utils.tokenize import tokenize
+from utils.get_vocab import get_vocab
+from utils.encode_with_vocab import encode_with_vocab
 
 def get_dataset(name):
   if (name == "fr-en"):
@@ -21,7 +21,7 @@ def prepare_dataset(dataset, shuffle, lowercase, max_window_size):
   for line in dataset:
     if lowercase:
       line = line.lower()
-    fr, en, credits = line.split("\t")
+    en, fr, credits = line.split("\t")
 
     encoder_input.append(tokenize(fr))
     decoder_input.append(tokenize(en))
@@ -41,6 +41,7 @@ def prepare_dataset(dataset, shuffle, lowercase, max_window_size):
 
   encoder_vocab = get_vocab(encoder_input)
   decoder_vocab = get_vocab(decoder_input)
+
   encoder_inverted_vocab = { v: k for k, v in encoder_vocab.items() }
   decoder_inverted_vocab = { v: k for k, v in decoder_vocab.items() }
 
