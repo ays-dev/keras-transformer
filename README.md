@@ -421,3 +421,9 @@ Credits
 <a href="https://github.com/CyberZHG/keras-transformer">https://github.com/CyberZHG/keras-transformer</a>
 <i>CyberZHG</i>
 </pre>
+
+<pre>
+<b>Dataset</b>
+<a href="https://www.manythings.org/anki/">https://www.manythings.org/anki/</a>
+</pre>
+
