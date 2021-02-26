@@ -374,7 +374,7 @@ $ ./tensorboard --logdir=./logs
 Configs
 
 ```
-Base:
+Base (training on CPU) :
   EMBEDDING_SIZE = 64
   ENCODER_VOCAB_SIZE = 10000
   DECODER_VOCAB_SIZE = 10000
@@ -387,7 +387,7 @@ Base:
   BATCH_SIZE = 32
  -> 2.4 millions params (model size : ~28 Mo)
 
-Big:
+Big (training on GPU) :
   EMBEDDING_SIZE = 512
   ENCODER_VOCAB_SIZE = 30000
   DECODER_VOCAB_SIZE = 30000
