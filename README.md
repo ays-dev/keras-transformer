@@ -95,7 +95,7 @@ model_checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
 
 early_stopping_callback = tf.keras.callbacks.EarlyStopping(
   monitor = "loss",
-  mode="min",
+  mode = "min",
   patience = 2,
   min_delta = 0.001
 )
