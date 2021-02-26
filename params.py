@@ -91,6 +91,7 @@ for batch_num in BATCH_SIZE.domain.values:
 
           print("--- Starting trial: %s" % run_name)
           print({ h.name: hparams[h] for h in hparams })
+
           run("logs/hparam_tuning/" + run_name, hparams)
 
           session_num += 1
