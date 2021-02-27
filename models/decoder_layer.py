@@ -24,23 +24,26 @@ class DecoderLayer(tf.keras.layers.Layer):
   def build(self, input_shape):
     super().build(input_shape)
 
-    self.attention = MultiHeadAttention(self.embedding_size, self.nb_head)
-    self.norm = tf.keras.layers.LayerNormalization()
+    self.attention_1 = MultiHeadAttention(self.embedding_size, self.nb_head)
+    self.attention_2 = MultiHeadAttention(self.embedding_size, self.nb_head)
+    self.norm_1 = tf.keras.layers.LayerNormalization()
+    self.norm_2 = tf.keras.layers.LayerNormalization()
+    self.norm_3 = tf.keras.layers.LayerNormalization()
     self.dense_1 = tf.keras.layers.Dense(self.dense_layer_size)
     self.dense_2 = tf.keras.layers.Dense(self.embedding_size)
 
   def call(self, x):
     output_embedding, encoder_output = x
 
-    self_attention = self.attention((output_embedding, output_embedding, output_embedding), mask = True)
-    post_self_attention = self.norm(self_attention + output_embedding)
+    self_attention = self.attention_1((output_embedding, output_embedding, output_embedding), mask = True)
+    post_self_attention = self.norm_1(self_attention + output_embedding)
 
-    decoder_attention = self.attention((post_self_attention, encoder_output, encoder_output))
-    post_decoder_attention = self.norm(decoder_attention + post_self_attention)
+    decoder_attention = self.attention_2((post_self_attention, encoder_output, encoder_output))
+    post_decoder_attention = self.norm_2(decoder_attention + post_self_attention)
 
     dense_out = self.dense_1(post_decoder_attention)
     dense_out = self.dense_2(dense_out)
 
-    decoder_output = self.norm(dense_out + post_decoder_attention)
+    decoder_output = self.norm_3(dense_out + post_decoder_attention)
 
     return decoder_output

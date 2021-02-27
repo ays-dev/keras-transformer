@@ -60,24 +60,27 @@ tensorboard_callback = tf.keras.callbacks.TensorBoard(
 
 model_checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
   filepath = checkpoint_filepath,
-  monitor = "loss",
-  mode = "min",
-  verbose = True,
-  save_weights_only = True
+  monitor = "val_accuracy",
+  mode = "max",
+  save_weights_only = True,
+  save_best_only = True,
+  verbose = True
 )
 
 early_stopping_callback = tf.keras.callbacks.EarlyStopping(
-  monitor = "loss",
-  mode = "min",
+  monitor = "val_accuracy",
+  mode = "max",
   patience = 2,
-  min_delta = 0.001
+  min_delta = 0.001,
+  verbose = True
 )
 
 transformer_model.fit(
   x,
   y,
-  epochs = 10,
+  epochs = 15,
   batch_size = 32,
+  validation_split = 0.1,
   callbacks=[
     model_checkpoint_callback,
     tensorboard_callback,

@@ -88,27 +88,30 @@ tensorboard_callback = tf.keras.callbacks.TensorBoard(
 
 model_checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
   filepath = checkpoint_filepath,
-  monitor = "loss",
-  mode = "min",
-  verbose = True,
-  save_weights_only = True
+  monitor = "val_accuracy",
+  mode = "max",
+  save_weights_only = True,
+  save_best_only = True,
+  verbose = True
 )
 
 early_stopping_callback = tf.keras.callbacks.EarlyStopping(
-  monitor = "loss",
-  mode = "min",
+  monitor = "val_accuracy",
+  mode = "max",
   patience = 2,
-  min_delta = 0.001
+  min_delta = 0.001,
+  verbose = True
 )
 
 transformer_model.fit(
   x,
   y,
-  epochs = 10,
+  epochs = 15,
   batch_size = 32,
+  validation_split = 0.1,
   callbacks=[
-    tensorboard_callback,
     model_checkpoint_callback,
+    tensorboard_callback,
     early_stopping_callback
   ]
 )
@@ -132,41 +135,47 @@ Encoder-Word-Embedding (WordEmb (None, None, 64)     1110016     Encoder-Input[0
 __________________________________________________________________________________________________
 Decoder-Word-Embedding (WordEmb (None, None, 64)     579456      Decoder-Input[0][0]
 __________________________________________________________________________________________________
-Encoder-Position-Embedding (Pos (None, None, 64)     0           Encoder-Word-Embedding[0][0]
+Encoder-Positional-Embedding (P (None, None, 64)     0           Encoder-Word-Embedding[0][0]
 __________________________________________________________________________________________________
-Decoder-Position-Embedding (Pos (None, None, 64)     0           Decoder-Word-Embedding[0][0]
+Decoder-Positional-Embedding (P (None, None, 64)     0           Decoder-Word-Embedding[0][0]
 __________________________________________________________________________________________________
-Encoder (Encoder)               (None, None, 64)     66688       Encoder-Position-Embedding[0][0]
+Encoder (Encoder)               (None, None, 64)     66944       Encoder-Positional-Embedding[0][0
 __________________________________________________________________________________________________
-Decoder (Decoder)               (None, None, 64)     66688       Decoder-Position-Embedding[0][0]
+Decoder (Decoder)               (None, None, 64)     100480      Decoder-Positional-Embedding[0][0
+                                                                 Encoder[0][0]
 __________________________________________________________________________________________________
 Decoder-Output (Dense)          (None, None, 9054)   588510      Decoder[0][0]
 ==================================================================================================
-Total params: 2,411,358
-Trainable params: 2,411,358
+Total params: 2,445,406
+Trainable params: 2,445,406
 Non-trainable params: 0
 __________________________________________________________________________________________________
-Epoch 1/10
-3125/3125 [==============================] - ETA: 0s - loss: 1.0576 - accuracy: 0.8354
-Epoch 00001: saving model to ./logs/transformer_ep-01_loss-1.06_acc-0.84.ckpt
-3125/3125 [==============================] - 888s 284ms/step - loss: 1.0576 - accuracy: 0.8354
-Epoch 2/10
-3125/3125 [==============================] - ETA: 0s - loss: 0.4799 - accuracy: 0.9101
-Epoch 00002: saving model to ./logs/transformer_ep-02_loss-0.48_acc-0.91.ckpt
-3125/3125 [==============================] - 900s 288ms/step - loss: 0.4799 - accuracy: 0.9101
-Epoch 3/10
-3125/3125 [==============================] - ETA: 0s - loss: 0.3348 - accuracy: 0.9308
-Epoch 00003: saving model to ./logs/transformer_ep-03_loss-0.33_acc-0.93.ckpt
-3125/3125 [==============================] - 904s 289ms/step - loss: 0.3348 - accuracy: 0.9308
+Epoch 1/15
+2813/2813 [==============================] - ETA: 0s - loss: 1.0506 - accuracy: 0.8396
+Epoch 00001: val_accuracy improved from -inf to 0.84285, saving model to ./logs/transformer_ep-01_loss-1.05_acc-0.84.ckpt
+2813/2813 [==============================] - 1010s 359ms/step - loss: 1.0506 - accuracy: 0.8396 - val_loss: 0.9235 - val_accuracy: 0.8429
+Epoch 2/15
+2813/2813 [==============================] - ETA: 0s - loss: 0.4577 - accuracy: 0.9142
+Epoch 00002: val_accuracy improved from 0.84285 to 0.87188, saving model to ./logs/transformer_ep-02_loss-0.46_acc-0.91.ckpt
+2813/2813 [==============================] - 962s 342ms/step - loss: 0.4577 - accuracy: 0.9142 - val_loss: 0.7430 - val_accuracy: 0.8719
+Epoch 3/15
+2813/2813 [==============================] - ETA: 0s - loss: 0.3159 - accuracy: 0.9340
+Epoch 00003: val_accuracy improved from 0.87188 to 0.88687, saving model to ./logs/transformer_ep-03_loss-0.32_acc-0.93.ckpt
+2813/2813 [==============================] - 959s 341ms/step - loss: 0.3159 - accuracy: 0.9340 - val_loss: 0.6626 - val_accuracy: 0.8869
 ...
-Epoch 9/10
-3125/3125 [==============================] - ETA: 0s - loss: 0.1527 - accuracy: 0.9603
-Epoch 00009: saving model to ./logs/transformer_ep-09_loss-0.15_acc-0.96.ckpt
-3125/3125 [==============================] - 878s 281ms/step - loss: 0.1527 - accuracy: 0.9603
-Epoch 10/10
-3125/3125 [==============================] - ETA: 0s - loss: 0.1426 - accuracy: 0.9624
-Epoch 00010: saving model to ./logs/transformer_ep-10_loss-0.14_acc-0.96.ckpt
-3125/3125 [==============================] - 877s 281ms/step - loss: 0.1426 - accuracy: 0.9624
+Epoch 8/15
+2813/2813 [==============================] - ETA: 0s - loss: 0.1545 - accuracy: 0.9600
+Epoch 00008: val_accuracy improved from 0.89448 to 0.89624, saving model to ./logs/transformer_ep-08_loss-0.15_acc-0.96.ckpt
+2813/2813 [==============================] - 910s 324ms/step - loss: 0.1545 - accuracy: 0.9600 - val_loss: 0.6334 - val_accuracy: 0.8962
+Epoch 9/15
+2813/2813 [==============================] - ETA: 0s - loss: 0.1441 - accuracy: 0.9621
+Epoch 00009: val_accuracy improved from 0.89624 to 0.89654, saving model to ./logs/transformer_ep-09_loss-0.14_acc-0.96.ckpt
+2813/2813 [==============================] - 903s 321ms/step - loss: 0.1441 - accuracy: 0.9621 - val_loss: 0.6387 - val_accuracy: 0.8965
+Epoch 10/15
+2813/2813 [==============================] - ETA: 0s - loss: 0.1346 - accuracy: 0.9640
+Epoch 00010: val_accuracy did not improve from 0.89654
+2813/2813 [==============================] - 913s 324ms/step - loss: 0.1346 - accuracy: 0.9640 - val_loss: 0.6730 - val_accuracy: 0.8933
+Epoch 00010: early stopping
 ```
 
 

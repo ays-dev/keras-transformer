@@ -39,7 +39,7 @@ transformer_model = get_model(
 
 transformer_model.summary()
 
-transformer_model.load_weights('./logs/transformer_ep-10_loss-0.14_acc-0.96.ckpt')
+transformer_model.load_weights('./logs/transformer_ep-09_loss-0.14_acc-0.96.ckpt')
 
 translate = make_translate(transformer_model, encoder_vocab, decoder_vocab, decoder_inverted_vocab)
 

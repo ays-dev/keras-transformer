@@ -25,17 +25,18 @@ class EncoderLayer(tf.keras.layers.Layer):
     super().build(input_shape)
 
     self.attention = MultiHeadAttention(self.embedding_size, self.nb_head)
-    self.norm = tf.keras.layers.LayerNormalization()
+    self.norm_1 = tf.keras.layers.LayerNormalization()
+    self.norm_2 = tf.keras.layers.LayerNormalization()
     self.dense_1 = tf.keras.layers.Dense(self.dense_layer_size)
     self.dense_2 = tf.keras.layers.Dense(self.embedding_size)
 
   def call(self, x):
     attention = self.attention((x, x, x))
-    post_attention = self.norm(attention + x)
+    post_attention = self.norm_1(attention + x)
 
     dense_out = self.dense_1(post_attention)
     dense_out = self.dense_2(dense_out)
 
-    enc_output = self.norm(dense_out + x)
+    enc_output = self.norm_2(dense_out + x)
 
     return enc_output
