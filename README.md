@@ -118,7 +118,7 @@ transformer_model.fit(
 ```
 
 
-##### Output
+##### - Output -
 
 ```
 Dataset loaded. Length: 185583 lines
@@ -236,7 +236,7 @@ translate("tom a acheté un nouveau vélo .")
 ```
 
 
-##### Output
+##### - Output -
 
 ```
 Original: c'est une belle journée .
@@ -356,7 +356,7 @@ for batch_num in BATCH_SIZE.domain.values:
 ```
 
 
-##### Output
+##### - Output -
 
 ```
 --- Starting trial: run-0

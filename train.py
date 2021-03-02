@@ -60,30 +60,37 @@ tensorboard_callback = tf.keras.callbacks.TensorBoard(
 
 model_checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
   filepath = checkpoint_filepath,
-  monitor = "val_accuracy",
-  mode = "max",
   save_weights_only = True,
-  save_best_only = True,
   verbose = True
 )
 
-early_stopping_callback = tf.keras.callbacks.EarlyStopping(
-  monitor = "val_accuracy",
-  mode = "max",
-  patience = 2,
-  min_delta = 0.001,
-  verbose = True
-)
+
+from utils.make_translate import make_translate
+
+class CustomCallback(tf.keras.callbacks.Callback):
+  def on_epoch_end(self, epoch, logs=None):
+    translate = make_translate(transformer_model, encoder_vocab, decoder_vocab, decoder_inverted_vocab)
+
+    translate("c'est une belle journée.")
+    translate("j'aime manger du gâteau.")
+    translate("c'est une bonne chose.")
+    translate("il faut faire à manger pour nourrir les gens.")
+    translate("tom a acheté un nouveau vélo.")
+    translate("nous faisons du vélo pour aller en ville.")
+    translate("la pêche est bonne aujourd'hui.")
+    translate("mais demain est un autre jour.")
+
+
+
 
 transformer_model.fit(
   x,
   y,
-  epochs = 15,
+  epochs = 10,
   batch_size = 32,
-  validation_split = 0.1,
   callbacks=[
     model_checkpoint_callback,
     tensorboard_callback,
-    early_stopping_callback
+    CustomCallback()
   ]
 )

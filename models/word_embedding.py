@@ -27,15 +27,11 @@ class WordEmbedding(tf.keras.layers.Layer):
 
     self.word_embedding = tf.keras.layers.Embedding(
       self.vocab_size,
-      self.embedding_size
+      self.embedding_size,
+      mask_zero = True
     )
 
   def call(self, x):
     word_embedding = self.word_embedding(x)
-
-    window_dim = x.get_shape().as_list()[1]
-    masks = tf.keras.layers.Lambda(mask_zero, output_shape=(-1,))(x)
-    masks = tf.keras.layers.Reshape(target_shape=(-1, 1))(masks)
-    word_embedding = tf.keras.layers.Multiply()([word_embedding, masks])
 
     return word_embedding
