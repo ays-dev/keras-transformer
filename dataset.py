@@ -5,7 +5,7 @@ from utils.encode_with_vocab import encode_with_vocab
 
 def get_dataset(name):
   if (name == "fr-en"):
-    f = open("fr-en-train.txt", "r")
+    f = open("fr-en-train.txt", "r", encoding = "utf-8")
     file = f.read()
     return file.split("\n")
   else:
