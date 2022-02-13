@@ -31,12 +31,12 @@ class EncoderLayer(tf.keras.layers.Layer):
     self.dense_2 = tf.keras.layers.Dense(self.embedding_size)
 
   def call(self, x):
-    attention = self.attention((x, x, x))
-    post_attention = self.norm_1(attention + x)
+    self_attention = self.attention((x, x, x))
+    self_attention = self.norm_1(self_attention + x)
 
-    dense_out = self.dense_1(post_attention)
+    dense_out = self.dense_1(self_attention)
     dense_out = self.dense_2(dense_out)
 
-    enc_output = self.norm_2(dense_out + x)
+    encoder_output = self.norm_2(dense_out + self_attention)
 
-    return enc_output
+    return encoder_output

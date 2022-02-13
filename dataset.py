@@ -21,7 +21,7 @@ def prepare_dataset(dataset, shuffle, lowercase, max_window_size):
   for line in dataset:
     if lowercase:
       line = line.lower()
-    en, fr, credits = line.split("\t")
+    en, fr, _credits = line.split("\t")
 
     encoder_input.append(tokenize(fr))
     decoder_input.append(tokenize(en))

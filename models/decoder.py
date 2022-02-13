@@ -3,14 +3,14 @@ import tensorflow as tf
 from .decoder_layer import DecoderLayer
 
 class Decoder(tf.keras.layers.Layer):
-  def __init__(self, nb_decoder, embedding_size, dense_layer_size, nb_head = 1, **kwargs):
+  def __init__(self, nb_decoder, embedding_size, dense_layer_size, nb_head, **kwargs):
     super().__init__(**kwargs)
 
     self.nb_decoder = nb_decoder
     self.embedding_size = embedding_size
     self.dense_layer_size = dense_layer_size
-    self.decoder_layers = []
     self.nb_head = nb_head
+    self.decoder_layers = []
 
   def get_config(self):
     config = super().get_config().copy()
@@ -27,15 +27,15 @@ class Decoder(tf.keras.layers.Layer):
   def build(self, input_shape):
     super().build(input_shape)
 
-    for nb in range(self.nb_decoder):
+    for _ in range(self.nb_decoder):
       self.decoder_layers.append(
         DecoderLayer(self.embedding_size, self.dense_layer_size, self.nb_head)
       )
 
   def call(self, x):
-    output_embedding, encoder_output = x
+    decoder_input, encoder_output = x
 
-    decoder_output = output_embedding
+    decoder_output = decoder_input
 
     for decoder_layer in self.decoder_layers:
       decoder_output = decoder_layer((decoder_output, encoder_output))

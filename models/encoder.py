@@ -27,7 +27,7 @@ class Encoder(tf.keras.layers.Layer):
   def build(self, input_shape):
     super().build(input_shape)
 
-    for nb in range(self.nb_encoder):
+    for _ in range(self.nb_encoder):
       self.encoder_layers.append(
         EncoderLayer(self.embedding_size, self.dense_layer_size, self.nb_head)
       )

@@ -1,5 +1,6 @@
 import tensorflow as tf
 
+#from https://github.com/CyberZHG/keras-pos-embd/blob/37a7a7426226fba138208b2fb31a9a018d29abd6/keras_pos_embd/trig_pos_embd.py
 class PositionalEmbedding(tf.keras.layers.Layer):
   def __init__(self, **kwargs):
     super().__init__(**kwargs)
