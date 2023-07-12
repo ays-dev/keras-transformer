@@ -255,7 +255,7 @@ Traduction: tom bought a new bicycle .
 ### Fine-tuning
 ``python params.py``
 
-![ScreenShot](/Jul-12-2023 23-42-27.png)
+![ScreenShot](/Jul-12-2023%2023-42-27.png)
 
 ```python
 import tensorflow as tf
@@ -390,7 +390,7 @@ for batch_num in BATCH_SIZE.domain.values:
 $ ./tensorboard --logdir=./logs
 ```
 
-![ScreenShot Animation](/Jul-12-2023 23-42-27.gif)
+![ScreenShot Animation](/Jul-12-202%2023-42-27.gif)
 
 ### Configs
 
