@@ -25,6 +25,8 @@ $ python --version
 ### Train
 ``python train.py``
 
+![ScreenShot Dashboard](/Jul-12-2023%2023-53-36.png)
+
 ```python
 import tensorflow as tf
 import numpy as np
