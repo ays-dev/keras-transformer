@@ -21,6 +21,15 @@ $ python --version
 > Python 3.7.9
 ```
 
+### Special tokens
+
+This model use three special tokens to control training and generation  
+```
+0	<pad>
+1	<start>
+2	<stop>
+```
+For full list of tokens with their respective frequencies and indexes see : `dic-en.txt` and `dic-fr.txt` files
 
 ### Train
 
