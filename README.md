@@ -402,6 +402,11 @@ for batch_num in BATCH_SIZE.domain.values:
 
 Visualize your train, tests results, hyper-parameters optimizations, embedding and more with tensorboard !
 
+For embedding visualization using PCA method for example yellow dots are most frequent words  
+Blue and dark ones are less frequent words  
+
+Frequency is clipped at 60.000 max
+
 ```
 $ ./tensorboard --logdir=./logs
 ```
