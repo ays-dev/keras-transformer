@@ -196,7 +196,7 @@ Epoch 00010: early stopping
 
 ### Predict
 
-Do the prediction AKA do the language translation here in this case
+Do the prediction AKA do fr-en language translation here in this case
 
 
 ``python predict.py``
