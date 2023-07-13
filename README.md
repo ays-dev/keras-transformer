@@ -7,7 +7,7 @@ $ cat requirements.txt && pip install -r requirements.txt
 ```
 tensorflow==2.3.0
 numpy==1.18.5
-nltk==3.5
+nltk==3.5 # AKA natural language tokenizer
 ```
 
 ```
@@ -23,6 +23,10 @@ $ python --version
 
 
 ### Train
+
+Train the model
+
+
 ``python train.py``
 
 ![ScreenShot Dashboard](/Jul-12-2023%2023-53-36.png)
@@ -182,6 +186,10 @@ Epoch 00010: early stopping
 
 
 ### Predict
+
+Do the prediction AKA do the language translation here in this case
+
+
 ``python predict.py``
 
 ```python
@@ -255,6 +263,10 @@ Traduction: tom bought a new bicycle .
 
 
 ### Fine-tuning
+
+Find best hyper-parameters combination using hparams plugin from tensorboard
+
+
 ``python params.py``
 
 ![ScreenShot](/Jul-12-2023%2023-42-27.png)
@@ -387,6 +399,8 @@ for batch_num in BATCH_SIZE.domain.values:
 ```
 
 ### Visualize
+
+Visualize your train, tests results, hyper-parameters optimizations, embedding and more with tensorboard !
 
 ```
 $ ./tensorboard --logdir=./logs
